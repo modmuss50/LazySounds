@@ -13,15 +13,15 @@ public class ClassTransformer implements IClassTransformer {
             System.out.println("Found SoundHandler");
             ClassNode classNode = readClassFromBytes(basicClass);
             for(MethodNode methodNode : classNode.methods){
-                if(methodNode.name.equals("onResourceManagerReload") || methodNode.name.equals("func_110549_a")){
+                if(methodNode.name.equals("onResourceManagerReload") || methodNode.name.equals("func_110549_a") || (methodNode.name.equals("a") && methodNode.desc.equals("(Lcep;)V"))){
                     System.out.println("Found onResourceManagerReload");
                     patch_onResourceManagerReload(methodNode);
                 }
-                if(methodNode.name.equals("playSound") || methodNode.name.equals("func_147682_a")){
+                if(methodNode.name.equals("playSound") || methodNode.name.equals("func_147682_a") || (methodNode.name.equals("a") && methodNode.desc.equals("(Lcgt;)V"))){
                     System.out.println("Found playSound");
                     patch_playSound(methodNode);
                 }
-                if(methodNode.name.equals("playDelayedSound") || methodNode.name.equals("func_147681_a")){
+                if(methodNode.name.equals("playDelayedSound") || methodNode.name.equals("func_147681_a") || (methodNode.name.equals("a") && methodNode.desc.equals("(Lcgt;I)V"))){
                     System.out.println("Found playDelayedSound");
                     patch_playDelayedSound(methodNode);
                 }

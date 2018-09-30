@@ -11,8 +11,9 @@ import java.util.Map;
  *
  * -Dfml.coreMods.load=me.modmuss50.LoadingPlugin
  */
-@IFMLLoadingPlugin.SortingIndex(1001)//Ensures that the target classes have been mapped to srg names
 @IFMLLoadingPlugin.Name("LazySounds")
+@IFMLLoadingPlugin.MCVersion("1.12.2")
+@IFMLLoadingPlugin.SortingIndex(1)
 public class LoadingPlugin implements IFMLLoadingPlugin {
     @Override
     public String[] getASMTransformerClass() {
