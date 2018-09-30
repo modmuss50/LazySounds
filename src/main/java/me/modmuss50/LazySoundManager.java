@@ -32,7 +32,7 @@ public class LazySoundManager {
         soundQueue.clear();
         List<Tuple<ResourceLocation, SoundList>> resources = new java.util.LinkedList<>();
 
-        resourceManager.getResourceDomains().parallelStream().forEach(s -> {
+        resourceManager.getResourceDomains().forEach(s -> {
             try {
                 for (IResource iresource : resourceManager.getAllResources(new ResourceLocation(s, "sounds.json"))) {
                     try {
