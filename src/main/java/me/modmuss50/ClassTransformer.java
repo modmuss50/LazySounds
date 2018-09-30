@@ -43,6 +43,9 @@ public class ClassTransformer implements IClassTransformer {
         ));
        insnList.add(new InsnNode(Opcodes.RETURN));
        methodNode.instructions.insert(insnList);
+
+       //Remove the old try catches as we no longer have any - great 2 hours spent on this 1 line of code
+       methodNode.tryCatchBlocks.clear();
     }
 
     public void patch_playSound(MethodNode methodNode){
